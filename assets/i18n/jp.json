@@ -1,0 +1,36 @@
+{
+    "admin-section":{
+        
+    },
+    "school-admin-section":{
+        "login-page":{
+            "left-image-header":"教育と学習を楽しくしましょう！",
+            "header":"ログインする"
+            ,"form":{
+                "username":{
+                    "label":"ユーザー名",
+                    "placeholder":"ユーザー名を入力して下さい"
+                },
+                "password":{
+                    "label":"パスワード",
+                    "placeholder":"パスワードを入力してください"
+                },
+                "rememberme":{
+                    "label":" 私を覚えてますか"
+                },
+                "forgotpasswordlink":{
+                    "label":"パスワードをお忘れですか？"
+                },
+                "submit-button":"ログインする",
+                "username_validation_required":"ユーザー名を入力してください",
+                "password_validation_required":"パスワードを入力してください"
+            }
+        }
+    },
+    "teacher-section":{
+
+    },
+    "student-section":{
+
+    }
+}
