@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Replace</title>
+    <style>
+     .css-label {
+        padding: 2px;
+        font-size: 17px;
+        font-weight: 700;
+     }
+    .css-input {
+     padding: 2px;
+     width: 350px;
+     font-size: 17px;
+     border-width: 1px;
+     border-color: #CCCCCC;
+     background-color: #FFFFFF;
+     color: #000000;
+     border-style: solid;
+     border-radius: 0px;
+     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+    }
+    .css-input:focus {
+        outline:none;
+    }
+    .myButton {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+</style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+
+<body style="margin:20px;padding:20px;" spellcheck = false>
+
+<table>
+    <tr>
+        <td><label class="css-label">Search</label> <input class="css-input" type="text" id="SearchTxt" /> </td>
+        <td><label class="css-label">Replace With</label> <input class="css-input" type="text" id="ReplaceTxt" /> </td>
+        <td> <button  class="myButton" onclick="Replace()">Replace</button></td>
+
+    </tr>
+</table>
+<br/><br/><br/>
+<div id="contentdv" style="padding: 20px; caret-color : #ecf753; background-color: #1b1a1a; border-color:#9a9ea0 ;border-width:5px; border-style:dashed;min-height:400px;" contenteditable="true">
+    
+</div>
+
+
+
+
+<script>
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+function Replace() {
+   var data = $('#contentdv').html();
+   var SearchTxt = $('#SearchTxt').val();
+   var ReplaceTxt = $('#ReplaceTxt').val();
+   var repls = data.replaceAll(SearchTxt,ReplaceTxt);
+   $('#contentdv').html(repls)
+}
+</script>
+
+</body>
+</html>
